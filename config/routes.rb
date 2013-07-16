@@ -1,11 +1,12 @@
 Minishopify::Application.routes.draw do
-  get "/products", to: "products#index"
-  get "/products/:id", to: "products#show", as: "product"
-  get "/products/new"
-  post "/products", to: "products#create"
-  get "/products/:id/edit", to: "products#edit"
-  patch "/products/:id", to: "products#update"
-  delete "products/:id", to: "products#destroy"
+  # get "/products", to: "products#index"
+  # get "/products/:id", to: "products#show", as: "product"
+  # get "/products/new"
+  # post "/products", to: "products#create"
+  # get "/products/:id/edit", to: "products#edit"
+  # patch "/products/:id", to: "products#update"
+  # delete "products/:id", to: "products#destroy"
+  resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
