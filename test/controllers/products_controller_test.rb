@@ -32,6 +32,7 @@ class ProductsControllerTest < ActionController::TestCase
 		get :show, id: products(:one)
 		assert_response :success
 		assert_not_nil assigns(:product)
+    assert_select '.title', products(:one).title
 	end
 
 	test "should get new action" do
