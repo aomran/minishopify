@@ -16,9 +16,11 @@ class ProductsControllerTest < ActionController::TestCase
   		price: 25.99
   	}
   end
+
   test "should get index action" do
   	get :index
   	assert_response :success
+    assert_select '.entry', 2
 	end
 
 	test "should assign products in index action" do
