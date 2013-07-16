@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: First Book
+  description: this is a book about something great
+  image_url: gg.gif
+  price: 25.99
+
+two:
+  title: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
