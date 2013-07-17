@@ -39,6 +39,7 @@ class ProductsControllerTest < ActionController::TestCase
 		get :new
 		assert_response :success
 		assert_not_nil assigns(:product)
+    assert_select 'form'
 	end
 
 	test "should create new product" do
@@ -56,6 +57,9 @@ class ProductsControllerTest < ActionController::TestCase
 		get :edit, id: products(:one)
 		assert_response :success
 		assert_not_nil assigns(:product)
+    assert_select '#product_title' do
+      assert_select "[value=?]", products(:one).title
+    end
 	end
 
 	test "should update product" do
