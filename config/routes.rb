@@ -8,6 +8,7 @@ Minishopify::Application.routes.draw do
   # patch "/products/:id", to: "products#update"
   # delete "products/:id", to: "products#destroy"
   resources :products
+  post "/line_items", to: "line_items#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -48,7 +49,7 @@ Minishopify::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
