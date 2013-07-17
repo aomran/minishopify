@@ -1,4 +1,5 @@
 Minishopify::Application.routes.draw do
+  get "store/index"
   # get "/products", to: "products#index"
   # get "/products/:id", to: "products#show", as: "product"
   # get "/products/new"

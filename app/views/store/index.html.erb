@@ -1,0 +1,20 @@
+<h1>Products Catalog</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Price</th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr class="entry">
+      <td><%= product.title %></td>
+      <td><%= product.description %></td>
+      <td><%= product.image_url %></td>
+      <td><%= product.price %></td>
+    </tr>
+
+  <% end %>
+</table>
