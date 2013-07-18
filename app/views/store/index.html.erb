@@ -1,3 +1,7 @@
+<% if notice %>
+<p class="notice"><%= notice %></p>
+<% end %>
+
 <h1>Products Catalog</h1>
 
 <table>
@@ -11,7 +15,10 @@
   <% @products.each do |product| %>
     <tr class="entry">
       <td><%= product.title %></td>
-      <td><%= product.description %></td>
+      <td>
+      <%= product.description %>
+      <%= link_to 'Add to Cart', line_items_path(product: product.id), method: :post %>
+      </td>
       <td><%= product.image_url %></td>
       <td><%= product.price %></td>
     </tr>

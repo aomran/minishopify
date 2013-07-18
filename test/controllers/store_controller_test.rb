@@ -5,6 +5,7 @@ class StoreControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:products)
+    assert_select 'a', "Add to Cart"
   end
 
 end

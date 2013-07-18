@@ -12,6 +12,6 @@ class LineItemsController < ApplicationController
 
     @line_item = @cart.add_product(@product.id)
     
-    redirect_to store_index_url
+    redirect_to store_index_url, notice: "Item added to cart"
   end
 end

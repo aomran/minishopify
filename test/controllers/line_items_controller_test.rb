@@ -33,7 +33,9 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should redirect to cart" do
     post :create, product: products(:one)
-    assert_redirected_to store_index_url
+    assert_redirected_to store_index_url do
+      assert_select '.notice'
+    end
   end
 
 end
