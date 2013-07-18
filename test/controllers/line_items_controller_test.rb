@@ -25,4 +25,10 @@ class LineItemsControllerTest < ActionController::TestCase
   	assert_equal assigns(:cart).id, cart.id
   end
 
+
+  test "should add line item to cart" do
+    post :create, product: products(:one)
+    assert_not_nil assigns(:line_item)
+  end
+
 end

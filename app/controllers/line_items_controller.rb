@@ -9,6 +9,8 @@ class LineItemsController < ApplicationController
     else
     	@cart = Cart.find(session[:cart_id])
     end
+
+    @line_item = @cart.add_product(@product.id)
     
     render nothing: true
   end
