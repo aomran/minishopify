@@ -12,6 +12,6 @@ class LineItemsController < ApplicationController
 
     @line_item = @cart.add_product(@product.id)
     
-    render nothing: true
+    redirect_to store_index_url
   end
 end

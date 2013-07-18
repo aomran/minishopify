@@ -31,4 +31,9 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:line_item)
   end
 
+  test "should redirect to cart" do
+    post :create, product: products(:one)
+    assert_redirected_to store_index_url
+  end
+
 end
