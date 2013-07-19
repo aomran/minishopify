@@ -1,17 +1,17 @@
 class LineItemsController < ApplicationController
 
   def create
-    @product = Product.find(params[:product])
+    @product = Product.find_by_id(params[:product])
 
     if session[:cart_id] == nil
-    	@cart = Cart.new
+    	@cart = Cart.create
     	session[:cart_id] = @cart.id
     else
-    	@cart = Cart.find(session[:cart_id])
+    	@cart = Cart.find_by_id(session[:cart_id])
     end
 
     @line_item = @cart.add_product(@product.id)
     
-    redirect_to store_index_url, notice: "Item added to cart"
+    redirect_to cart_path(@cart)
   end
 end

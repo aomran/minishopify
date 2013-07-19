@@ -1,6 +1,7 @@
 Minishopify::Application.routes.draw do
-  get "carts/:id", to: "carts#show", as: 'cart_path'
-  get "store/index"
+
+  get "/carts/:id", to: "carts#show", as: "cart"
+  get "/store/index"
   # get "/products", to: "products#index"
   # get "/products/:id", to: "products#show", as: "product"
   # get "/products/new"

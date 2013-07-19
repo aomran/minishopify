@@ -13,12 +13,12 @@ class LineItemsControllerTest < ActionController::TestCase
   test "should create new cart if not cart exists" do
   	session[:cart_id] = nil
   	post :create, product: products(:one)
-  	assert_not_nil assigns(:cart)
+  	assert_not_nil assigns(:cart).id
   	assert_equal session[:cart_id], assigns(:cart).id
   end
 
    test "should use cart if it exists" do
-  	cart = Cart.new
+  	cart = Cart.create
   	session[:cart_id] = cart.id
   	
   	post :create, product: products(:one)
@@ -31,11 +31,9 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:line_item)
   end
 
-  test "should redirect to cart" do
+  test "should show cart" do
     post :create, product: products(:one)
-    assert_redirected_to store_index_url do
-      assert_select '.notice'
-    end
+    assert_redirected_to cart_path(session[:cart_id])
   end
 
 end
