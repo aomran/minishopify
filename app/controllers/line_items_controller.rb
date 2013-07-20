@@ -11,7 +11,8 @@ class LineItemsController < ApplicationController
     end
 
     @line_item = @cart.add_product(@product.id)
-    
+    @line_item.save
+
     redirect_to cart_path(@cart)
   end
 end
