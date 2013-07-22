@@ -1,2 +1,4 @@
 <h1>Cart</h1>
 <%= render @cart %>
+
+<%= link_to 'Empty', @cart, method: :delete, data: {confirm: "Are you sure?"} %>
