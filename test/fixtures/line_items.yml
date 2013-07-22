@@ -3,7 +3,8 @@
 one:
   quantity: 1
   price: 9.99
-  product_id: 
+  product: one
+  cart: one
 
 two:
   quantity: 1
