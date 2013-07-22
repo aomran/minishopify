@@ -2,8 +2,8 @@ class LineItemsController < ApplicationController
   before_action :set_cart
 
   def create
-    @product = Product.find(params[:product])
-    @line_item = @cart.add_product(@product.id)
+    product = Product.find(params[:product])
+    @line_item = @cart.add_product(product.id)
     @line_item.save
 
     redirect_to cart_path(@cart)
