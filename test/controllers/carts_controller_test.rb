@@ -12,7 +12,7 @@ class CartsControllerTest < ActionController::TestCase
   		delete :destroy, id: carts(:cart_without_item)
   	end
 
-  	assert_redirected_to store_index_url
+  	assert_redirected_to root_url
   end
 
   test "should remove cart_id from session" do
