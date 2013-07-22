@@ -28,9 +28,17 @@ class LineItemsControllerTest < ActionController::TestCase
   	assert_equal assigns(:cart).id, cart.id
   end
 
-  test "should show cart" do
+  test "should redirect to cart" do
     post :create, product: products(:one)
     assert_redirected_to cart_path(session[:cart_id])
+  end
+
+  test "should delete line item" do
+    assert_difference 'LineItem.count', -1 do
+      delete :destroy, id: line_items(:one).id
+    end
+
+    assert_redirected_to cart_path(assigns(:cart))
   end
 
 end

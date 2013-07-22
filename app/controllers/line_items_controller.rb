@@ -9,6 +9,14 @@ class LineItemsController < ApplicationController
     redirect_to cart_path(@cart)
   end
 
+  def destroy
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+    
+    redirect_to cart_path(@cart), notice: 'Line item removed'
+  end
+
+  private
   def set_cart
     if session[:cart_id].nil?
         @cart = Cart.create

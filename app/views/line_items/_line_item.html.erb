@@ -1,1 +1,1 @@
-<p><%= line_item.quantity %>X <%= line_item.product.title %></p>
+<p><%= line_item.quantity %>X <%= line_item.product.title %> <%= link_to 'Remove', line_item, method: :delete %></p>
