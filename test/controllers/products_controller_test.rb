@@ -20,7 +20,6 @@ class ProductsControllerTest < ActionController::TestCase
   test "should get index action" do
   	get :index
   	assert_response :success
-    assert_select '.entry', 2
 	end
 
 	test "should assign products in index action" do
@@ -32,14 +31,12 @@ class ProductsControllerTest < ActionController::TestCase
 		get :show, id: products(:one)
 		assert_response :success
 		assert_not_nil assigns(:product)
-    assert_select '.title', products(:one).title
 	end
 
 	test "should get new action" do
 		get :new
 		assert_response :success
 		assert_not_nil assigns(:product)
-    assert_select 'form'
 	end
 
 	test "should create new product" do
@@ -73,10 +70,5 @@ class ProductsControllerTest < ActionController::TestCase
 		end
 		assert_redirected_to products_path
 	end
-
-	# work on this when I get to validations
-	# test "should redirect to new action after failed creation" do
-	# 	post :create, product: @product
-	# 	assert_redirected_to product_path(assigns(:product))
-	# end
+	
 end

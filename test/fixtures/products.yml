@@ -6,8 +6,8 @@ one:
   image_url: gg.gif
   price: 25.99
 
-two:
-  title: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
+book:
+  title: Rails Book
+  description: Stuff about rails
+  image_url: rails.png
+  price: 19.99

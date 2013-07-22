@@ -3,8 +3,8 @@
 one:
   quantity: 1
   price: 9.99
-  product: one
-  cart: one
+  product: book
+  cart: cart_with_item
 
 two:
   quantity: 1

@@ -4,8 +4,8 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+cart_without_item: {}
 # column: value
 #
-two: {}
+cart_with_item: {}
 #  column: value
