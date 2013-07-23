@@ -1,5 +1,6 @@
 Minishopify::Application.routes.draw do
 
+  resources :orders, only: ['new', 'create']
   get "/carts/:id", to: "carts#show", as: "cart"
   delete "/carts/:id", to: "carts#destroy"
   root "store#index"

@@ -1,0 +1,19 @@
+<%= form_for(@order) do |f| %>
+<div>
+<%= f.label :name %>
+<%= f.text_field :name %>
+</div>
+<div>
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+<div>
+<%= f.label :address %>
+<%= f.text_area :address %>
+</div>
+<div>
+<%= f.label :pay_type %>
+<%= f.text_field :pay_type %>
+</div>
+<%= f.submit %>
+<% end %>
