@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_cart
+  before_action :set_line_item, except: ['create']
 
   def create
     product = Product.find(params[:product])
@@ -10,19 +11,22 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
     redirect_to cart_path(@cart), notice: 'Line item removed'
   end
 
   def decrement
-    @line_item = LineItem.find(params[:id])
     @line_item.decrement_or_destroy
     redirect_to cart_path(@cart), notice: 'Line item removed'
   end
 
   private
+
+  def set_line_item
+    @line_item = LineItem.find(params[:id])
+  end
+
   def set_cart
     if session[:cart_id].nil?
         @cart = Cart.create
