@@ -3,11 +3,10 @@ class LineItem < ActiveRecord::Base
   belongs_to :cart
 
   def decrement_or_destroy
-    if self.quantity > 1
-      self.quantity -= 1
-      self.save
+    if quantity > 1
+      decrement!(:quantity)
     else
-      self.destroy
+      destroy
     end
   end
 end
