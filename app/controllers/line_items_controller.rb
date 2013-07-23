@@ -12,7 +12,13 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    
+
+    redirect_to cart_path(@cart), notice: 'Line item removed'
+  end
+
+  def decrement
+    @line_item = LineItem.find(params[:id])
+    @line_item.decrement_or_destroy
     redirect_to cart_path(@cart), notice: 'Line item removed'
   end
 

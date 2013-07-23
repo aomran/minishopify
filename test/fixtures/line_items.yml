@@ -10,3 +10,8 @@ two:
   quantity: 1
   price: 9.99
   product_id: 
+
+two_items:
+  quantity: 2
+  price: 9.99
+  product_id: 

@@ -38,6 +38,15 @@ class LineItemsControllerTest < ActionController::TestCase
       delete :destroy, id: line_items(:one).id
     end
 
+    assert assigns(:line_item)
+    assert_redirected_to cart_path(assigns(:cart))
+  end
+
+  test "should decrement line item with quantity greater than one" do
+    put :decrement, id: line_items(:two_items).id
+
+    assert assigns(:line_item)
+    assert_equal assigns(:line_item).quantity, 1
     assert_redirected_to cart_path(assigns(:cart))
   end
 
