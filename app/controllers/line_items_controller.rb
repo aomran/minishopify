@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  include CurrentCart
   before_action :set_cart
   before_action :set_line_item, except: ['create']
 
@@ -25,14 +26,5 @@ class LineItemsController < ApplicationController
 
   def set_line_item
     @line_item = LineItem.find(params[:id])
-  end
-
-  def set_cart
-    if session[:cart_id].nil?
-        @cart = Cart.create
-        session[:cart_id] = @cart.id
-    else
-        @cart = Cart.find(session[:cart_id])
-    end
   end
 end

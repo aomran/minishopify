@@ -1,12 +1,16 @@
 class OrdersController < ApplicationController
 
+  include CurrentCart
+  before_action :set_cart
+
   def new
+    if @cart.line_items.empty?
+      redirect_to root_url, notice: 'Your cart is empty'
+    end
     @order = Order.new
   end
 
   def create
-    @cart = Cart.find(session[:cart_id])
-
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
     @order.save
@@ -14,7 +18,7 @@ class OrdersController < ApplicationController
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
 
-    render nothing: true
+    redirect_to root_url, notice: 'Thank you for your order!'
   end
 
   private
