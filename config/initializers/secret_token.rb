@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Minishopify::Application.config.secret_key_base = '1822b5d04dfdd951fa2a19c1374a227a7bda016c5ec7aa58a877cccc525a3fbea171877b67b95a1b8d200f909ebf62cc2f01dcbc1554d0c476d2114f9aad067a'
+Minishopify::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
