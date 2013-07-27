@@ -39,6 +39,12 @@ class OrdersControllerTest < ActionController::TestCase
     assert_nil session[:cart_id]
   end
 
+  test "should send notification email" do
+    assert_difference 'ActionMailer::Base.deliveries.size' do
+      post :create, order: @order
+    end
+  end
+
   test "should redirect back to store-front" do
     post :create, order: @order
 

@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
 
+    OrderNotifier.received(@order).deliver
     redirect_to root_url, notice: 'Thank you for your order!'
   end
 
