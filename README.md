@@ -107,9 +107,7 @@ The `t.references :cart, index: true` will add a column called "cart_id" to the 
 1. Now that we have a cart with some line_items, clicking on the checkout button will make a GET request to the **Orders new** action. The new action will make an empty object to be used in a form. *The action will also check if the cart is empty, if so it will redirect back to the store.*
 2. A form is rendered in the `orders/new.html.erb` view. The order has a few attributes (name, shipping etc.) which are present on the form.
 3. The form is submitted, going to the **Orders create** action.
-4. The create action will create an order from the form's params and then will use the custom method `add_line_items_from_cart` to form the associated collection. This object is then saved to the database and we destroy the cart and remove it from the session.
-
-The `add_line_items_from_cart` method is defined in the Order model and it takes line items from the cart and adds them to the order's line_items collection. *We set the cart_id of each item to nil, since there is a dependency created which deletes the line items once a cart is deleted.*
+4. The create action will create an order from the form's params and then will use the custom method `add_line_items_from_cart` to form the associated collection. This object is then saved to the database and we destroy the cart and remove it from the session. The `add_line_items_from_cart` method is defined in the Order model and it takes line items from the cart and adds them to the order's line_items collection. *We set the cart_id of each item to nil, since there is a dependency created which deletes the line items once a cart is deleted.*
 
 5. The user is redirected to the store-front with a 'Thank you for your order' message.
 
