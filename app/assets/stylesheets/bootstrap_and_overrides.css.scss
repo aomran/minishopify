@@ -1,0 +1,38 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+  .leaves-ui {
+  background: image-url("bkgnd.jpg") top center no-repeat;
+  background-size: cover;
+  padding: 20px;
+  padding-top: 50px;
+  }
+
+  .artcart {
+  text-align: leftt;
+  padding-left: 2%;
+  padding-top: 20px;
+  opacity: .7;
+  }
+
+  .img-polaroid{padding: 10px;
+  -webkit-box-shadow:  2px 2px 4px #555;
+  -moz-box-shadow:  2px 2px 4px #555;
+  box-shadow: 2px 2px 4px #555;
+  }
+
+  .price{color: #13c;}
+
+  .btn-small{margin: 6px;
+     -webkit-box-shadow:  2px 2px 2px #555;
+         -moz-box-shadow:  2px 2px 2px #555;
+     box-shadow: 2px 2px 2px #555;
+  }
+
+  .row{padding: 15px;}
+
+  .descrip{padding-left: 20px;}
