@@ -25,7 +25,13 @@ All of our models have controllers: Products, LineItems, Carts, and Orders. **St
 
 A **foreign key** is a column in a database table which is used to establish a link/association between two tables. The model with the **belongs_to** will have a foreign key column in its database table; the model with the **has_many** will not change.
 
-We can generate foreign keys during the generation of a model like so: `$ rails generate model LineItem quantity:integer price:decimal product:references cart:references order:references`.
+We can generate foreign keys during the generation of a model like so:
+
+```
+$ rails generate model LineItem quantity:integer price:decimal \
+product:references cart:references order:references
+```
+
 
 This will product the following migration:
 
