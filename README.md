@@ -35,7 +35,7 @@ product:references cart:references order:references
 
 This will product the following migration:
 
-```
+```ruby
 class CreateLineItems < ActiveRecord::Migration
   def change
     create_table :line_items do |t|
@@ -52,7 +52,7 @@ end
 
 This is equivalent to:
 
-```
+```ruby
 class CreateLineItems < ActiveRecord::Migration
   def change
     create_table :line_items do |t|
