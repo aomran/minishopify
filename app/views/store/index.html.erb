@@ -10,7 +10,7 @@
       <div class="row">
       <div class="span3">
         <%= link_to image_tag(product.image_url, class: 'img-polaroid'),
-        image_url("large"+product.image_url, class: 'img-polaroid' ) %>
+        store_path(product) %>
       </div>
     <div class="span6 descrip">
       <h3><%= product.title %></h3>
@@ -18,7 +18,9 @@
       <div>
           <span class="span1 price"><%= number_to_currency(product.price) %></span>
           <div class = "span1">
-            <%= button_to 'Add to Cart', line_items_path(product: product.id), class: "btn btn-small btn-nomarg"%>
+            <%= button_to 'Add to Cart', line_items_path(product: product.id), class: "btn btn-small btn-nomarg-down"%>
+            <%= link_to raw('<i class="icon-search"></i> Show'), store_path(product), class: "btn btn-small btn-nomarg" %><br/>
+
               </div>
         </div>
       </div>
