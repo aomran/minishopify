@@ -9,7 +9,8 @@
   <% @products.each do |product| %>
       <div class="row">
       <div class="span3">
-        <%= image_tag(product.image_url, class: 'img-polaroid') %>
+        <%= link_to image_tag(product.image_url, class: 'img-polaroid'),
+        image_url("large"+product.image_url, class: 'img-polaroid' ) %>
       </div>
     <div class="span6 descrip">
       <h3><%= product.title %></h3>
@@ -17,7 +18,7 @@
       <div>
           <span class="span1 price"><%= number_to_currency(product.price) %></span>
           <div class = "span1">
-            <%= button_to 'Add to Cart', line_items_path(product_id: product), class: "btn btn-small btn-nomarg", remote: true %>
+            <%= button_to 'Add to Cart', line_items_path(product: product.id), class: "btn btn-small btn-nomarg"%>
               </div>
         </div>
       </div>

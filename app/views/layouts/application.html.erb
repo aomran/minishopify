@@ -11,18 +11,9 @@
   <h1 class="artcart"><%= image_tag('theArtCart2.png')%></h1>
 </div>
 <div class="container">
-        <div class="row">
-        <% if @cart %>
-          <% mainclass = "span9" %>
-          <%= hidden_div_if(@cart.line_items.empty?, {id: 'cart', class: 'span3'}) do %>
-            <%= render @cart %>
-          <% end %>
-        <% else %>
-           <% mainclass = "span12" %>
-        <% end %>
-        <div id="main" class="<%= mainclass%>">
+  <div class="row">
 <%= yield %>
-
+  </div>
  </div>
 </body>
 </html>

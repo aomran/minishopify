@@ -16,7 +16,7 @@
       </td>
       <td><%= product.title %></td>
       <td><%= product.description %></td>
-      <td class="price"><%= product.price %></td>
+      <td class="price"><%= number_to_currency(product.price) %></td>
       <td>
         <div class="displace">
         <%= link_to raw('<i class="icon-search"></i> Show'), product_path(product), class: "btn btn-small" %><br/>
