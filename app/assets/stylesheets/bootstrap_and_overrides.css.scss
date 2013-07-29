@@ -1,0 +1,64 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+  .leaves-ui {
+  background: image-url("bkgnd.jpg") top center no-repeat;
+  background-size: cover;
+  padding: 20px;
+  padding-top: 50px;
+  }
+
+  .artcart {
+  text-align: left;
+  padding-left: 2%;
+  padding-top: 20px;
+  opacity: .7;
+  }
+
+  .label-center {
+
+  text-align: center;
+  max-width: 900px;
+}
+  .caption{
+  padding-top: 20px;
+  }
+
+  .large-type{
+    font-size: x-large;
+  }
+
+  .img-polaroid{padding: 10px;
+  -webkit-box-shadow:  2px 2px 4px #555;
+  -moz-box-shadow:  2px 2px 4px #555;
+  box-shadow: 2px 2px 4px #555;
+  }
+
+  .price{color: #13c;}
+  .total-price{color: #13c; font-weight: bold;
+          border-top: 1px solid #595;}
+
+  .btn-small{margin: 6px;
+     -webkit-box-shadow:  2px 2px 2px #555;
+         -moz-box-shadow:  2px 2px 2px #555;
+     box-shadow: 2px 2px 2px #555;
+  }
+
+  .btn-nomarg{margin: 0px;}
+  .btn-nomarg-down{margin: 0px; margin-top: 25px;}
+  .row{padding: 15px;}
+
+  .descrip{padding-left: 20px;}
+
+  .notice { color: #006;
+          border: 1px solid blue;
+          padding: 1em;
+          margin-bottom: 2em;
+          background-color: #ffdd88;          font: bold smaller sans-serif;}
+
+  form input {background-color: #d90; color: #fff}
+  form label {color: #009; font-weight: bold;}

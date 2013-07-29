@@ -1,0 +1,10 @@
+<h1 class="title"><%= @product.title %></h1>
+<div class="label-center">
+<%= image_tag("large"+@product.image_url, class: 'img-polaroid') %>
+  <div class="caption">
+  <p> <%= @product.description %></p>
+  <p class="price"><%= number_to_currency(@product.price) %></p>
+</div>
+</div>
+</ul>
+
