@@ -4,7 +4,7 @@ Minishopify::Application.routes.draw do
   get "/carts/:id", to: "carts#show", as: "cart"
   delete "/carts/:id", to: "carts#destroy"
   root "store#index"
-  get "/store/:id", to: "store#show", as: "store"
+  get "/store/products/:id", to: "store#show", as: "store"
   # get "/products", to: "products#index"
   # get "/products/:id", to: "products#show", as: "product"
   # get "/products/new"
