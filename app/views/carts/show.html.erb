@@ -12,6 +12,6 @@
     </tr>
 
 </table>
-<%= link_to raw('<i class="icon-remove"></i> Empty'), @cart, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-small btn-danger" %>
 <%= link_to raw('<i class="icon-arrow-left"></i> Back to Catalog'), root_path, class: "btn btn-small btn-primary"  %>
+<%= link_to raw('<i class="icon-remove"></i> Empty'), @cart, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-small btn-danger" %>
 <%= link_to raw('<i class="icon-ok"></i> Checkout'), new_order_path, class: "btn btn-small btn-success"  %>
