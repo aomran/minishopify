@@ -7,7 +7,7 @@
 
 
   <% @products.each do |product| %>
-      <div class="row">
+      <div class="row product_<%= product.id %>">
       <div class="span3">
         <%= link_to image_tag(product.image_url, class: 'img-polaroid'),
         store_path(product) %>
