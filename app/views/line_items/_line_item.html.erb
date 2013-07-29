@@ -1,1 +1,10 @@
-<p><%= line_item.quantity %>X <%= line_item.product.title %> <%= link_to 'Remove All', line_item, method: :delete %> | <%= link_to 'Remove One', line_item, method: :put %></p>
+<tr>
+  <td>  <%= image_tag("small"+line_item.product.image_url, class: 'img-polaroid') %></td>
+<td> <span class='large-type'><%= line_item.quantity %></span> x </td>
+<td><%= line_item.product.title %></td>
+
+<td class="price"><%= number_to_currency(line_item.total_price) %></td>
+<td> <%= link_to raw('<i class="icon-remove"></i> Remove All'), line_item, method: :delete, class: "btn btn-small btn-danger" %>
+<%= link_to raw('<i class="icon-remove"></i> Remove One'), line_item, method: :put, class: "btn btn-small" %></p></td>
+
+ </tr>

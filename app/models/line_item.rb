@@ -10,4 +10,7 @@ class LineItem < ActiveRecord::Base
       destroy
     end
   end
+  def total_price
+    product.price * quantity
+  end
 end

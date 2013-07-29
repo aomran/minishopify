@@ -4,24 +4,27 @@
 
 <h1>Products Catalog</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Image</th>
-    <th>Price</th>
-  </tr>
+
 
   <% @products.each do |product| %>
-    <tr class="entry">
-      <td><%= product.title %></td>
-      <td>
+      <div class="row">
+      <div class="span3">
+        <%= link_to image_tag(product.image_url, class: 'img-polaroid'),
+        store_path(product) %>
+      </div>
+    <div class="span6 descrip">
+      <h3><%= product.title %></h3>
       <%= product.description %>
-      <%= link_to 'Add to Cart', line_items_path(product: product.id), method: :post %>
-      </td>
-      <td><%= product.image_url %></td>
-      <td><%= product.price %></td>
-    </tr>
+      <div>
+          <span class="span1 price"><%= number_to_currency(product.price) %></span>
+          <div class = "span1">
+            <%= button_to 'Add to Cart', line_items_path(product: product.id), class: "btn btn-small btn-nomarg-down"%>
+            <%= link_to raw('<i class="icon-search"></i> Show'), store_path(product), class: "btn btn-small btn-nomarg" %><br/>
+
+              </div>
+        </div>
+      </div>
+    </div>
 
   <% end %>
-</table>
+
