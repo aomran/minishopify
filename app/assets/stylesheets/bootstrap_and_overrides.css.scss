@@ -28,6 +28,10 @@
   padding-top: 20px;
   }
 
+  .large-type{
+    font-size: x-large;
+  }
+
   .img-polaroid{padding: 10px;
   -webkit-box-shadow:  2px 2px 4px #555;
   -moz-box-shadow:  2px 2px 4px #555;
@@ -35,6 +39,8 @@
   }
 
   .price{color: #13c;}
+  .total-price{color: #13c; font-weight: bold;
+          border-top: 1px solid #595;}
 
   .btn-small{margin: 6px;
      -webkit-box-shadow:  2px 2px 2px #555;
