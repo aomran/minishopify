@@ -1,9 +1,9 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-# require "minitest/rails"
+
+# Getting capybara ready for use
 require "capybara/rails"
-require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
 
 class ActiveSupport::TestCase
