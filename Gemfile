@@ -40,6 +40,7 @@ gem 'figaro'
 
 group :test do
   gem "minitest-rails-capybara"
+  gem 'database_cleaner'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
